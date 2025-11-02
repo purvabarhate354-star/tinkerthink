@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Tinkerthink Login</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+body, html {height: 100%; margin: 0; font-family: Montserrat, Arial, sans-serif; background: #472D69;}
+.container {display: flex; height: 100vh;}
+.left-panel {flex: 1.2; background: linear-gradient(110deg,#472D69 0%, #6c43b2 100%); color:#fff; display:flex; flex-direction:column; justify-content:center; align-items:flex-start; padding:60px;}
+.left-panel h1 {font-size:2.6rem; margin-bottom:10px;}
+.left-panel span {color:#ffe179; font-weight:700;}
+.left-panel p {font-size:1.1rem; margin-top:8px; max-width:360px; opacity:0.95;}
+.right-panel {flex: 1.5; background: #5c369c; display:flex; flex-direction:column; justify-content:center; align-items:center; padding:50px 20px;}
+.login-box {width:100%; max-width:370px; background:#613391; padding:36px 32px; border-radius:16px; box-shadow:0 4px 24px rgba(70,40,120,.17);}
+.login-box h2 {text-align:center;color:#ffe179;margin-bottom:16px;}
+.google-btn {width: 100%; background:#eee2ff;color:#472D69; border:none; padding:10px; border-radius:8px; margin-bottom:18px; font-weight:500; cursor:pointer;display:flex; align-items:center; gap:12px; justify-content:center;}
+.google-btn img {vertical-align:middle;}
+.login-box form {display:flex; flex-direction:column; gap:13px;}
+.login-box input[type="text"],
+.login-box input[type="email"],
+.login-box input[type="password"]{padding:12px; border:1px solid #c7c8cc; border-radius:8px; font-size:1rem;}
+.login-box button[type="submit"]{margin-top:12px; background:linear-gradient(90deg,#ffe179 0%, #eeb13e 100%); color:#472D69; border:none; padding:12px 0; border-radius:8px; font-size:1.08rem; font-weight:600; cursor:pointer;}
+.remember-row{margin-top:10px; display:flex; align-items:center; gap:7px; font-size:0.98rem; color:#ecd9ff;}
+@media (max-width: 800px){.container{flex-direction:column;}.left-panel,.right-panel{flex:unset; padding:32px 16px; min-height:210px;}.login-box{padding:24px 12px;}}
+</style>
+<script>
+function doLogin(event){
+  event.preventDefault();
+  var name = document.getElementById("name").value;
+  var email = document.getElementById("email").value;
+  var studentClass = document.getElementById("class").value;
+  localStorage.setItem("student_name", name);
+  localStorage.setItem("student_email", email);
+  localStorage.setItem("student_class", studentClass);
+  window.location.href = "dashboard.html"; // Redirect to main page
+}
+</script>
+</head>
+<body>
+<div class="container">
+  <div class="left-panel">
+    <h1><span>Tinkerthink</span>.</h1>
+    <p>Where Every Spark of Thought Becomes a Circuit of Innovation.</p>
+  </div>
+  <div class="right-panel">
+    <div class="login-box">
+      <h2>Login</h2>
+      <button class="google-btn">
+        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/google/google-original.svg" alt="Google" width="24" height="24">
+        Login with Google
+      </button>
+      <div style="text-align:center;color:#fff9c1;margin:8px 0 3px 0;">OR</div>
+      <form onsubmit="doLogin(event)">
+        <input type="text" id="name" placeholder="Name" required>
+        <input type="email" id="email" placeholder="Email" required>
+        <input type="text" id="class" placeholder="Class" required>
+        <input type="password" placeholder="Password" required>
+        <button type="submit">LOGIN</button>
+      </form>
+      <div class="remember-row">
+        <input type="checkbox" id="rememberMe">
+        <label for="rememberMe">Remember me</label>
+      </div>
+    </div>
+  </div>
+</div>
+</body>
+</html>

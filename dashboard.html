@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Tinkerthink Dashboard</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+body { margin:0; font-family:Montserrat,Arial,sans-serif; background:#3f2d63; }
+.dashboard-container { display: flex; min-height: 100vh; }
+.sidebar {
+  width: 15vw;
+  min-width: 160px;
+  background: #50277C;
+  color: #fff;
+  padding: 40px 10px 32px 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  box-shadow: 2px 0 12px rgba(58,34,110,0.09);
+}
+.sidebar img {
+  width: 75px;
+  height: 75px;
+  border-radius: 50%;
+  margin-bottom: 14px;
+  border: 4px solid #ffe179;
+  background: #fff;
+  object-fit: cover;
+}
+.sidebar h2 {margin:0 0 5px;font-size:1.1rem;font-weight:700;}
+.sidebar .email {font-size:0.91rem; color: #ffe179;}
+.sidebar .user-class {margin:10px 0 0 0; font-size:0.98rem; font-weight:500;}
+.sidebar .scores {margin-top:13px; width:100%;}
+.sidebar .scores-title {font-weight:600; color:#ffe179; margin-bottom:6px;}
+.sidebar .score-row {display:flex;justify-content:space-between;font-size:0.98rem; margin-bottom:3px;}
+.main-section {
+  flex:1;
+  padding: 30px 20px 0 20px;
+}
+.sections {
+  display: flex;
+  gap: 32px;
+  flex-wrap: wrap;
+  margin-top: 24px;
+}
+.card {
+  background: #673ab7;
+  color: #fff;
+  border-radius: 12px;
+  width: 240px;
+  padding: 22px 13px 30px 13px;
+  box-shadow: 0 2px 10px rgba(40,28,82,0.13);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 22px;
+}
+.card img {
+  width: 150px;
+  height: 90px;
+  object-fit: cover;
+  border-radius: 7px;
+  background: #fff;
+  margin-bottom: 13px;
+}
+.card h3 {font-size:1.09rem; color:#ffe08e; margin:12px 0 7px 0; font-weight:600;}
+.card p {color:#e8deff; font-size:0.95rem; margin-bottom:12px; min-height:25px;}
+.card .more-btn {
+  background: #ffe08e;
+  color: #673ab7;
+  font-weight: 600;
+  border: none;
+  border-radius: 4px;
+  padding: 6px 15px;
+  text-decoration: none;
+  font-size: 0.98rem;
+  transition: background .15s;
+  cursor: pointer;
+  letter-spacing: 1px;
+}
+.card .more-btn:hover {background: #ffd04a;}
+@media (max-width: 950px) {.sections {gap: 12px;} .card {width: 45vw; min-width:180px;}.sidebar{min-width:100px;}}
+@media (max-width: 800px) {
+  .dashboard-container {flex-direction:column;}
+  .sidebar {width:100vw; min-width:unset; flex-direction:row; justify-content:center; padding:14px 4px;}
+  .main-section {padding:16px;}
+  .sections {flex-direction: column; align-items: center;}
+  .card {width: 92vw; max-width: 260px;}
+}
+</style>
+<script>
+window.onload = function() {
+  var studentName = localStorage.getItem("student_name") || "Student Name";
+  var studentEmail = localStorage.getItem("student_email") || "student@email.com";
+  var studentClass = localStorage.getItem("student_class") || "Class not set";
+  document.getElementById("studentName").innerText = studentName;
+  document.getElementById("studentEmail").innerText = studentEmail;
+  document.getElementById("studentClass").innerText = studentClass;
+}
+</script>
+</head>
+<body>
+<div class="dashboard-container">
+  <div class="sidebar">
+    <img src="https://cdn-icons-png.flaticon.com/512/3135/3135715.png" alt="Student Photo">
+    <h2 id="studentName">Student Name</h2>
+    <div class="email" id="studentEmail">student@email.com</div>
+    <div class="user-class" id="studentClass">Class</div>
+  </div>
+  <div class="main-section">
+    <h1 style="color:#ffe179;">Tinkerthink Learning Modules</h1>
+    <div class="sections">
+      <div class="card">
+        <img src="image1.jpg" alt="Tinkercad Software"> <!-- Use your Tinkercad icon here -->
+        <h3>Tinkercad Software</h3>
+        <p>Design and simulate circuits online with Tinkercad's friendly interface.</p>
+        <a href="thinkercad.html" class="more-btn">MORE</a>
+      </div>
+      <div class="card">
+        <img src="breadboard.jpg" alt="Breadboard with Circuit"> <!-- Breadboard image -->
+        <h3>Breadboard Circuit</h3>
+        <p>Prototype real-world circuits and debug with practical breadboarding techniques.</p>
+        <a href="breadboard.html" class="more-btn">MORE</a>
+      </div>
+      <div class="card">
+        <img src="image3.jpg" alt="Series & Parallel">
+        <h3>Series &amp; Parallel</h3>
+        <p>Understand resistor combinations with interactive series &amp; parallel design.</p>
+        <a href="series.html" class="more-btn">MORE</a>
+      </div>
+      <div class="card">
+        <img src="components.jpg" alt="Components">
+        <h3>Components</h3>
+        <p>Explore resistors, capacitors, diodes, and inductors — circuit essentials.</p>
+        <a href="components.html" class="more-btn">MORE</a>
+      </div>
+      <div class="card">
+        <img src="image5.jpg" alt="Mini Project">
+        <h3>Mini Project</h3>
+        <p>Solve real-world problems with creative circuit mini projects and challenges.</p>
+        <a href="project.html" class="more-btn">MORE</a>
+      </div>
+    </div>
+  </div>
+</div>
+</body>
+</html>

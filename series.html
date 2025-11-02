@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Series & Parallel Module</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+body {font-family:Montserrat, Arial, sans-serif; background:#472D69; color:#fff;}
+.container {max-width: 700px; margin: 40px auto; background:#5c369c; border-radius:18px; box-shadow:0 4px 32px rgba(70,40,120,.18); padding:32px;}
+h1 {color: #ffe179; margin-bottom: 18px;}
+iframe {display:block; margin:0 auto 28px auto;}
+.quiz-section {background:#613391; padding:22px 14px; border-radius:10px; box-shadow:0 2px 16px rgba(90,70,140,.12);}
+.quiz-section h2 {color: #ffe179;}
+.question {margin-bottom: 18px;}
+.btn {background: #ffe179; color: #50277C; padding:8px 21px; border:none; border-radius:7px; font-weight:600; font-size:1em; margin-top:10px; cursor:pointer;}
+.btn:hover {background: #ffd366;}
+.score-msg {margin-top:18px; font-size:1.2rem; color:#ffefbc;}
+</style>
+</head>
+<body>
+  <div class="container">
+    <h1>Series & Parallel: Learn & Test Yourself!</h1>
+    <iframe width="560" height="315" src="https://www.youtube.com/embed/NjgxXcBfIII" title="Series and Parallel Circuits" frameborder="0" allowfullscreen></iframe>
+    <div class="quiz-section">
+      <h2>Series &amp; Parallel Quiz</h2>
+      <form id="quizForm">
+        <div class="question">
+          <strong>1. In a series circuit, bulbs are connected:</strong><br>
+          <label><input type="radio" name="q1" value="a" required> One after another</label><br>
+          <label><input type="radio" name="q1" value="b"> Side by side</label><br>
+          <label><input type="radio" name="q1" value="c"> Randomly</label><br>
+          <label><input type="radio" name="q1" value="d"> Not connected</label>
+        </div>
+        <div class="question">
+          <strong>2. In a parallel circuit, bulbs are connected:</strong><br>
+          <label><input type="radio" name="q2" value="a" required> One after another</label><br>
+          <label><input type="radio" name="q2" value="b"> Side by side</label><br>
+          <label><input type="radio" name="q2" value="c"> Randomly</label><br>
+          <label><input type="radio" name="q2" value="d"> Not connected</label>
+        </div>
+        <div class="question">
+          <strong>3. If one bulb goes off in a series circuit, what happens?</strong><br>
+          <label><input type="radio" name="q3" value="a" required> Only that bulb goes off</label><br>
+          <label><input type="radio" name="q3" value="b"> All bulbs go off</label><br>
+          <label><input type="radio" name="q3" value="c"> Bulbs shine brighter</label><br>
+          <label><input type="radio" name="q3" value="d"> Nothing</label>
+        </div>
+        <div class="question">
+          <strong>4. If one bulb goes off in a parallel circuit, what happens?</strong><br>
+          <label><input type="radio" name="q4" value="a" required> All bulbs go off</label><br>
+          <label><input type="radio" name="q4" value="b"> Other bulbs still work</label><br>
+          <label><input type="radio" name="q4" value="c"> Current stops</label><br>
+          <label><input type="radio" name="q4" value="d"> Bulbs explode</label>
+        </div>
+        <div class="question">
+          <strong>5. In a series circuit, the same current flows through:</strong><br>
+          <label><input type="radio" name="q5" value="a" required> Only one bulb</label><br>
+          <label><input type="radio" name="q5" value="b"> All bulbs</label><br>
+          <label><input type="radio" name="q5" value="c"> None</label><br>
+          <label><input type="radio" name="q5" value="d"> Some bulbs</label>
+        </div>
+        <div class="question">
+          <strong>6. In a parallel circuit, the voltage across all bulbs is:</strong><br>
+          <label><input type="radio" name="q6" value="a" required> Same</label><br>
+          <label><input type="radio" name="q6" value="b"> Different</label><br>
+          <label><input type="radio" name="q6" value="c"> Zero</label><br>
+          <label><input type="radio" name="q6" value="d"> Random</label>
+        </div>
+        <div class="question">
+          <strong>7. Which connection is used in homes so things work separately?</strong><br>
+          <label><input type="radio" name="q7" value="a" required> Series</label><br>
+          <label><input type="radio" name="q7" value="b"> Parallel</label><br>
+          <label><input type="radio" name="q7" value="c"> Both</label><br>
+          <label><input type="radio" name="q7" value="d"> None</label>
+        </div>
+        <div class="question">
+          <strong>8. Which connection was used in old Christmas lights?</strong><br>
+          <label><input type="radio" name="q8" value="a" required> Series</label><br>
+          <label><input type="radio" name="q8" value="b"> Parallel</label><br>
+          <label><input type="radio" name="q8" value="c"> Both</label><br>
+          <label><input type="radio" name="q8" value="d"> None</label>
+        </div>
+        <div class="question">
+          <strong>9. Series circuits have total resistance that is:</strong><br>
+          <label><input type="radio" name="q9" value="a" required> Higher</label><br>
+          <label><input type="radio" name="q9" value="b"> Lower</label><br>
+          <label><input type="radio" name="q9" value="c"> Same</label><br>
+          <label><input type="radio" name="q9" value="d"> Zero</label>
+        </div>
+        <div class="question">
+          <strong>10. Parallel circuits have total resistance that is:</strong><br>
+          <label><input type="radio" name="q10" value="a" required> Higher</label><br>
+          <label><input type="radio" name="q10" value="b"> Lower</label><br>
+          <label><input type="radio" name="q10" value="c"> Same</label><br>
+          <label><input type="radio" name="q10" value="d"> Zero</label>
+        </div>
+        <button type="submit" class="btn">Submit Quiz</button>
+      </form>
+      <div id="scoreMsg" class="score-msg"></div>
+    </div>
+  </div>
+<script>
+const answers = {
+  q1: "a",  // One after another (series)
+  q2: "b",  // Side by side (parallel)
+  q3: "b",  // All bulbs go off (series)
+  q4: "b",  // Other bulbs still work (parallel)
+  q5: "b",  // All bulbs (series)
+  q6: "a",  // Same (parallel voltages)
+  q7: "b",  // Parallel (home wiring)
+  q8: "a",  // Series (old Christmas)
+  q9: "a",  // Higher (series)
+  q10:"b"   // Lower (parallel)
+};
+document.getElementById('quizForm').onsubmit = function(e) {
+  e.preventDefault();
+  let score = 0;
+  const total = Object.keys(answers).length;
+  for(let q in answers) {
+    if(document.querySelector(`input[name="${q}"]:checked`)?.value === answers[q]) score++;
+  }
+  document.getElementById('scoreMsg').textContent = "Your quiz score: " + score + " / " + total;
+  // Save score in localStorage for dashboard (as percent)
+  let parScore = Math.round((score / total) * 100);
+  localStorage.setItem("score_seriesparallel", parScore);
+};
+</script>
+</body>
+</html>
